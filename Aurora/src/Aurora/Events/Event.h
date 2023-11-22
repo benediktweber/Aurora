@@ -2,9 +2,6 @@
 
 #include "Aurora/Core.h"
 
-#include <string>
-#include <functional>
-
 namespace Aurora
 {
 	// NOTE: Events are currently blocking and not buffered in a queue.

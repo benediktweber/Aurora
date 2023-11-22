@@ -1,3 +1,4 @@
+#include "arpch.h"
 #include "Application.h"
 
 #include "Aurora/Events/ApplicationEvent.h"
