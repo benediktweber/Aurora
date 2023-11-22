@@ -11,6 +11,13 @@ workspace "Aurora"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Aurora/vendor/GLFW/include"
+
+-- this will include the premake5 file of GLFW
+include "Aurora/vendor/GLFW"
+
 project "Aurora"
     location "Aurora"
     kind "SharedLib"
@@ -31,7 +38,14 @@ project "Aurora"
     includedirs
     {
         "%{prj.name}/src",
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+        "%{IncludeDir.GLFW}"
+    }
+
+    links
+    {
+        "GLFW",
+        "opengl32.lib"
     }
 
     filter "system:windows"
