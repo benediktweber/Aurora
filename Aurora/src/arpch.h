@@ -9,9 +9,11 @@
 #include <string>
 #include <sstream>
 #include <vector>
-#include <concurrent_unordered_map.h>
-#include <concurrent_unordered_set.h>
+#include <unordered_map>
+#include <unordered_set>
+
+#include "Aurora/Log.h"
 
 #ifdef AR_PLATFORM_WINDOWS
-	#include "Windows.h"
+	#include <Windows.h>
 #endif
